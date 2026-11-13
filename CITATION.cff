@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: >-
+  SequenceJacobian.jl is a Julia port of the Python toolbox sequence-jacobian.
+  If you use it, please cite the paper by Auclert, Bardóczy, Rognlie and Straub
+  (preferred citation below). You may also mention this port.
+title: "SequenceJacobian.jl: a Julia port of the sequence-jacobian toolbox"
+type: software
+version: 0.3.0
+license: MIT
+authors:
+  - family-names: Maghakyan
+    given-names: Sargis
+references:
+  - type: software
+    title: "sequence-jacobian"
+    authors:
+      - family-names: Auclert
+        given-names: Adrien
+      - family-names: Bardóczy
+        given-names: Bence
+      - family-names: Rognlie
+        given-names: Matthew
+      - family-names: Straub
+        given-names: Ludwig
+    repository-code: "https://github.com/shade-econ/sequence-jacobian"
+    license: MIT
+preferred-citation:
+  type: article
+  title: "Using the Sequence-Space Jacobian to Solve and Estimate Heterogeneous-Agent Models"
+  authors:
+    - family-names: Auclert
+      given-names: Adrien
+    - family-names: Bardóczy
+      given-names: Bence
+    - family-names: Rognlie
+      given-names: Matthew
+    - family-names: Straub
+      given-names: Ludwig
+  journal: Econometrica
+  volume: 89
+  issue: 5
+  start: 2375
+  end: 2408
+  year: 2021
+  doi: "10.3982/ECTA17434"

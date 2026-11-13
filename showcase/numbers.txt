@@ -1,0 +1,39 @@
+SequenceJacobian.jl showcase  (0.3.0, Julia 1.12.2, 2026-11-13)
+CPU: AMD Ryzen 5 5500U with Radeon Graphics, Julia threads: 1
+
+Warm-up on the small test models (compilation)...
+
+== RBC ==
+Impact response of Y: linear 1.4019%, nonlinear 1.4038%
+
+== Krusell-Smith (nS = 7, nA = 500) ==
+beta = 0.981953, K/Y = 3.143
+Wealth: Gini 0.718, top 10% share 0.507, share at the borrowing limit 0.211
+
+== One-asset HANK (nS = 7, nA = 500) ==
+beta = 0.982244, vphi = 0.7864
+100 bp: impact on Y linear 0.7549%, cut 0.8651%, hike -0.6468%
+Consumption on impact: total 0.1887%, direct share 28.9%, adding-up error 8.7e-19
+Quarterly MPC: mean 0.094, median 0.024; annual MPC mean 0.184; share constrained 0.173
+
+== Labor choice, stage block (nZ = 5, nA = 100) ==
+beta = 0.987235, employment rate 0.669
+
+== Two-asset HANK (nZ = 3, nB = 50, nA = 70) ==
+Peak responses: Y 0.4891%, C 0.2970%, I 1.6859%
+
+Timings (seconds, after compilation): model, grid, steady state, GE Jacobian, nonlinear
+RBC | — | 0.1125265 | 0.1281168 | 0.3590882
+Krusell-Smith | 7 × 500 | 5.7180323 | 1.0767983 | 4.9971652
+One-asset HANK | 7 × 500 | 10.3010133 | 4.5283012 | 8.6754005
+Labor choice (stage block) | 2 × 5 × 100 | 13.736943 | 1.5341459 | 5.1278435
+Two-asset HANK | 3 × 50 × 70 | 208.3662456 | 69.0497737 | NaN
+
+Accuracy: model, s.s. residual, steady path, fake-news rel. error, terminal distance
+RBC | 6.661338147750939e-16 | 0.0 | NaN | NaN
+Krusell-Smith | 5.280220705117245e-13 | 4.3349523082270025e-8 | 7.660685521052591e-7 | 3.8929147292907085e-9
+One-asset HANK | 5.4169864149855584e-9 | 8.123628614242762e-8 | 4.897493993260855e-7 | 5.482384914969052e-9
+Labor choice (stage block) | 6.927791673660977e-13 | 2.896928553042244e-6 | 2.6780492418774895e-7 | NaN
+Two-asset HANK | 1.6122569945764553e-10 | NaN | NaN | NaN
+
+Wrote C:\Users\Sargis Maghakyan\Desktop\PHD\SequenceJacobian.jl\showcase\RESULTS.md and 10 figures in C:\Users\Sargis Maghakyan\Desktop\PHD\SequenceJacobian.jl\showcase\figures
